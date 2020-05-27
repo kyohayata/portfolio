@@ -1,0 +1,437 @@
+@charset "UTF-8";
+
+
+/*共通部分*/
+li{
+    list-style:none;
+}
+*{
+    box-sizing:border-box;
+}
+.container{
+    margin:0 auto;
+}
+/*共通部分ここまで*/
+
+
+/*ここからパララックス*/
+.left{
+    transform:translateX(-50px);/* 最初は元の位置より左にずらしておく */
+    opacity:0;  /* 最初は非表示にしておく */
+    transition:opacity 2s,transform 3s;/* 透明度と位置を設定 */
+}
+.right{
+    transform:translate(25px,0);/* 最初は元の位置より右にずらしておく */
+    opacity:0;  /* 最初は非表示にしておく */
+    transition:opacity 2s,transform 3s;/* 透明度と位置を設定 */
+}
+.left-fadein{
+    opacity:1;/* 表示させる */
+    transform:translateX(0); /* 位置を最初の位置に戻す */
+}
+.right-fadein{
+    opacity:1;/* 表示させる */
+    transform:translate(0, 0); /* 位置を最初の位置に戻す */
+}
+/*ここまでパララックス*/
+
+
+/*ファーストビューのテキストが左から右に出てくるためのkeyframes*/
+header {
+    font-size: 20px;
+    font-weight: bold;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+@keyframes fadein {
+from {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+/*ここまでkeyframes*/
+
+
+/*ハンバーガーメニュー*/
+nav.globalMenuSp {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+  }
+  nav.globalMenuSp ul {
+    background: #f6f6f6;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    z-index:100;
+  }
+  nav.globalMenuSp ul li {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 0;
+    width: 100vw;
+    border-bottom: 1px dotted #333;
+    z-index:10;
+  }
+  
+  /* 最後はラインを描かない */
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #000;
+    padding: 1em 0;
+    font-size: 20px;
+  }
+  
+  
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    transform: translateY(0%);
+  }
+  .navToggle {
+    position:absolute;
+    right:20px;
+    top:10px;
+    
+    /* bodyに対しての絶対位置指定 */
+    width: 42px;
+    height: 51px;
+    cursor: pointer;
+    background: #666;
+    text-align: center;
+  }
+  
+  .navToggle span {
+    display: block;
+    position: absolute;
+    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #eee;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+  }
+  
+  .navToggle span:nth-child(1) {
+    top: 9px;
+  }
+  
+  .navToggle span:nth-child(2) {
+    top: 18px;
+  }
+  
+  .navToggle span:nth-child(3) {
+    top: 27px;
+  }
+  
+  .navToggle span:nth-child(4) {
+    border: none;
+    color: #eee;
+    font-size: 9px;
+    font-weight: bold;
+    top: 34px;
+  }
+  
+  
+  /* 最初のspanをマイナス45度に */
+  .navToggle.active span:nth-child(1) {
+    top: 18px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  
+  /* 2番目と3番目のspanを45度に */
+  .navToggle.active span:nth-child(2),
+  .navToggle.active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .globalMenuSp.active>.navi {
+    /* 追記 */
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+  }
+  
+  .globalMenuSp.active li {
+    /* 追記 */
+    margin-left: 0;
+  }
+  .main{
+    display: flex;
+    flex-direction:column;
+  }
+  /*ハンバーガーメニューここまで*/
+  
+
+/*スマホ*/
+/*ヘッダー*/
+header {
+    padding: 30px 0;
+    background-color:#f6f6f6;
+    display: flex;
+    align-items:center;
+}
+header span{
+    color:#f4d70b;
+}
+.logo{
+    width: 200px;
+}
+.navi{
+    display: none;
+}
+
+
+/*ファーストヴュー*/
+#first-view img{
+    width: 100%;
+}
+#first-view{
+    text-align: center;
+}
+.job{
+    width: 80vw;
+    display: flex;
+    justify-content:space-between;
+    margin:4% auto 2%;
+}
+#first-view p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/*about*/
+#about{
+    margin-top: 20%;
+    background-color:#f6f6f6;
+    padding: 10% 0;
+}
+#about img{
+    width: 40vw;
+    display: block;
+    margin:0 auto 10px;
+}
+#about>p,.about p{
+    text-align: center;
+}
+#about>p{
+    font-size: 30px;
+    font-weight: bold;
+}
+.about p:first-child{
+    font-size: 23px;
+    margin: 10px 0;
+}
+.about p{
+    text-align:initial;
+    font-size: 17px;
+    line-height:1.5em;
+    margin-bottom: 20px;
+}
+.about p:last-child{
+    line-height:1.5em;
+}
+.about{
+    width: 80vw;
+    margin:0 auto;
+}
+#about a{
+    color:#f4d70b;
+}
+
+
+/*skills*/
+#skills{
+    padding:10% 0;
+    margin-top: 20%;
+}
+#skills>p{
+    text-align: center;
+    font-size: 30px;
+    font-weight:bold;
+}
+#skills img{
+    width: 40vw;
+}
+.skill p:first-child{
+    font-size: 23px;
+    color:#ea3732;
+    margin-top: 20px;
+}
+.skill{
+    width: 50vw;
+    margin:0 auto;
+    text-align: center;
+}
+.skill p{
+    line-height:1.5em;
+    font-size: 17px;
+}
+.skills>div:nth-child(2),
+.skills>div:nth-child(3){
+    margin-top: 40px;
+}
+.skill:nth-child(2) p:first-child{
+    color:#fdde4d;
+    font-size: 23px;
+}
+.skill:nth-child(3) p:first-child{
+    color:#2b759c;
+    font-size: 23px;
+}
+.other-skill{
+    width: 80vw;
+    margin:15% auto 0;
+}
+.other-skill p:first-child{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.other-skill p:nth-child(2){
+    font-size: 23px;
+    color:#2b759c;
+    line-height:1.5em;
+    margin-top: 10px;
+}
+.other-skill p:nth-child(3){
+    font-size: 17px;
+    line-height:1.5em;
+    margin-top: 10px;
+}
+
+
+/*works*/
+#works{
+    padding:10% 0;
+    margin-top: 20%;
+    background-color:#f6f6f6;
+}
+#works p{
+    width: 80vw;
+    margin:0 auto;
+}
+#works p:first-child{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#works p:nth-child(2){
+    font-size: 17px;
+    text-align: center;
+    margin-top: 10px;
+}
+#works img{
+    width: 80vw;
+    display: inline-block;
+}
+
+
+/*実績作品にマウスオーバーすると左からテキストが現れる*/
+.work{
+    text-align: center;
+    position:relative;
+    margin-top: 50px;
+}
+.caption{
+	font-size:	130%;
+	color:#fff;
+	padding-top:80px;
+	padding-left:0px;
+}
+.text{
+	width:	100%;
+	height:	100%;
+	position:absolute;
+	top:0px;
+	left:0;
+	opacity:0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.6s ease;
+	transition:		all 0.6s ease;
+}
+.work:hover .text {
+	opacity:1;	/* マスクを表示する */
+	padding-left:10%;	/* 右にずらす */
+}
+/*テキストが現れるのはここまで*/
+
+
+/*contact*/
+#contact{
+    padding:10% 0;
+    margin-top: 20%;
+    width: 80vw;
+    margin:0 auto;
+    text-align: center;
+}
+#contact p:first-child{
+    font-size: 30px;
+    margin-top: 10px;
+}
+#contact p:nth-child(2){
+    font-size: 23px;
+    margin-top: 10px;
+}
+#contact p:nth-child(3){
+    font-size: 23px;
+    margin: 20px 0 10px 0;
+    text-align:initial;
+}
+#contact a{
+    color:#fdde4d;
+}
+#contact img{
+    width: 15vw;
+}
+
+
+/*footer*/
+footer{
+    text-align: center;
+    padding:30px 0;
+    background-color:#f6f6f6;
+}
+
+
+
+
+
+
+
+
+/*タブレット*/
+@media screen and (min-width:768px) { 
+
+}
+
+
+/*PC*/
+@media screen and (min-width:1024px) { 
+
+}
