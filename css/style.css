@@ -365,7 +365,7 @@ header span{
 .caption{
 	font-size:	130%;
 	color:#fff;
-	padding-top:80px;
+	padding-top:15%;
 	padding-left:0px;
 }
 .text{
@@ -382,9 +382,7 @@ header span{
 }
 .work:hover .text {
 	opacity:1;	/* マスクを表示する */
-    padding-left:10%;	/* 右にずらす */
-    display: flex;
-    justify-content:center;
+    padding-left:1%;	/* 右にずらす */
 }
 /*テキストが現れるのはここまで*/
 
