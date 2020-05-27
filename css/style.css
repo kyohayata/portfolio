@@ -403,6 +403,7 @@ header span{
 #contact p:nth-child(2){
     font-size: 23px;
     margin-top: 10px;
+    text-align:initial;
 }
 #contact p:nth-child(3){
     font-size: 23px;
