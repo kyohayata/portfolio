@@ -370,7 +370,8 @@ header span{
 }
 .text{
 	width:	100%;
-	height:	100%;
+    height:	100%;
+    
 	position:absolute;
 	top:0px;
 	left:0;
@@ -381,7 +382,9 @@ header span{
 }
 .work:hover .text {
 	opacity:1;	/* マスクを表示する */
-	padding-left:10%;	/* 右にずらす */
+    padding-left:10%;	/* 右にずらす */
+    display: flex;
+    justify-content:center;
 }
 /*テキストが現れるのはここまで*/
 
