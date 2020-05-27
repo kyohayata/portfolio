@@ -21,7 +21,7 @@ li{
     transition:opacity 2s,transform 3s;/* 透明度と位置を設定 */
 }
 .right{
-    transform:translate(50px,0);/* 最初は元の位置より右にずらしておく */
+    transform:translate(25px,0);/* 最初は元の位置より右にずらしておく */
     opacity:0;  /* 最初は非表示にしておく */
     transition:opacity 2s,transform 3s;/* 透明度と位置を設定 */
 }
@@ -33,7 +33,7 @@ li{
     opacity:1;/* 表示させる */
     transform:translate(0, 0); /* 位置を最初の位置に戻す */
 }
-#wrap{
+#wrap{/*パララックスで画面の右に余白ができるのを修正*/
     width: 100%;
     overflow:hidden;
 }
