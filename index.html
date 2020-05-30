@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--reset.css-->
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/reset.css">
     <!--css-->
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <!--fontawesome-->
@@ -27,10 +27,10 @@
         <div class="logo">早田<span>'S</span> Portfolio</div>
         <nav class="globalMenuSp">
           <ul class="navi">
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SKILLS</a></li>
-            <li><a href="#">WORKS</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#list1">ABOUT</a></li>
+            <li><a href="#list2">SKILLS</a></li>
+            <li><a href="#list3">WORKS</a></li>
+            <li><a href="#list4">CONTACT</a></li>
           </ul><!--/.navi-->
         </nav><!--/.globalMenuSp-->
         <div class="navToggle">
@@ -43,24 +43,26 @@
         <section id="first-view">
             <img src="images/first.jpeg" alt="">
             <div class="job">
-              <p>Web Desiner</p>
-              <p>予備校講師</p>
+              <p>・Corder</p>
+              <p>・予備校講師</p>
+              <p>Kyohei Hayata</p>
             </div><!--/.profile--> 
-            <p>Kyohei Hayata</p>
         </section><!--/#first-view-->
         <section id="about" class="left">
-          <p>About</p>
+          <p id="list1">About</p>
           <div class="about">
             <p>早田恭平(はやたきょうへい)</p>
+            <div>
             <figure><img src="images/profile-smart.jpg" alt=""></figure>
             <p>ある医学部受験の予備校の個別授業で数学を教えています。</p>
-            <p>2019年からHTML、 CSS、jQuery、PHPの勉強を始めて2020年の3月から企業のWEBの部門で働いています。</p>
+            <p>2019年からHTML、 CSS、jQuery、PHPの勉強を始めて2020年の3月からある企業のWEBの部門で働いています。</p>
             <p>現在はコーディングをメインに仕事をしています。</p>
             <p><a href="#">続きはこちらから</a></p>
+            </div>
           </div><!--/.about-->
         </section>
         <section id="skills" class="right">
-          <p>Skills</p>
+          <p id="list2">Skills</p>
           <div class="skills">
             <div class="skill">
               <p>HTML5/CSS</p>
@@ -70,7 +72,7 @@
             <div class="skill">
               <p>jQuery</p>
               <img src="images/jquery.jpg" alt="">
-              <p>LPのイメージを壊さないようにアニメーションをつけるように心がけています。</p>
+              <p>ページに適切なアニメーションをつけるように心がけています。</p>
             </div><!--/.skill-->
             <div class="skill">
               <p>wordpress</p>
@@ -89,59 +91,61 @@
           </div>
         </section><!--/#job-->
         <section id="works" class="left">
-          <p>WORKS</p>
+          <p id="list3">WORKS</p>
           <p>過去の制作実績の一部を紹介します</p>
-          <div class="work">
-            <a href="#">
-              <img src="images/jin.jpg" alt="">
-              <div class="text">
-                <div class="caption">模写作品<br>wordpressテーマ JIN</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
-          <div class="work">
-            <a href="#">
-              <img src="images/write.jpg" alt="">
-              <div class="text">
-                <div class="caption">模写作品<br>wordpressテーマ Write</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
-          <div class="work">
-            <a href="#">
-              <img src="images/cat.jpg" alt="">
-              <div class="text">
-                <div class="caption">模写作品<br>CAT</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
-          <div class="work">
-            <a href="#">
-              <img src="images/hearty.jpg" alt="">
-              <div class="text">
-                <div class="caption">案件実績<br>ハーティ ミルキースノウ</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
-          <div class="work">
-            <a href="#">
-              <img src="images/pas-pol.jpg" alt="">
-              <div class="text">
-                <div class="caption">模写作品<br>PAS-POL</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
-          <div class="work">
-            <a href="#">
-              <img src="images/jealous.jpg" alt="">
-              <div class="text">
-                <div class="caption">案件実績<br>jealous</div><!--/.caption-->
-              </div><!--/.text-->
-            </a>
-          </div><!--/.work-->
+          <div class="works">
+            <div class="work">
+              <a href="#">
+                <img src="images/jin.jpg" alt="">
+                <div class="text">
+                  <div class="caption">模写作品<br>wordpressテーマ JIN</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+            <div class="work">
+              <a href="#">
+                <img src="images/write.jpg" alt="">
+                <div class="text">
+                  <div class="caption">模写作品<br>wordpressテーマ Write</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+            <div class="work">
+              <a href="#">
+                <img src="images/cat.jpg" alt="">
+                <div class="text">
+                  <div class="caption">模写作品<br>CAT</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+            <div class="work">
+              <a href="#">
+                <img src="images/hearty.jpg" alt="">
+                <div class="text">
+                  <div class="caption">案件実績<br>ハーティ ミルキースノウ</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+            <div class="work">
+              <a href="#">
+                <img src="images/pas-pol.jpg" alt="">
+                <div class="text">
+                  <div class="caption">模写作品<br>PAS-POL</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+            <div class="work">
+              <a href="#">
+                <img src="images/jealous.jpg" alt="">
+                <div class="text">
+                  <div class="caption">案件実績<br>jealous</div><!--/.caption-->
+                </div><!--/.text-->
+              </a>
+            </div><!--/.work-->
+          </div><!--/.works-->
         </section><!--/#works-->
         <section id="contact" class="right">
-          <p>Contact</p>
+          <p id="list4">Contact</p>
           <p><a href="#">こちらからお願い致します。</a></p>
           <p>Twitterからのご連絡でも大丈夫です。</p>
           <a href="#"><img src="images/twitter.jpg" alt=""></a>
